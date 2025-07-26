@@ -1,12 +1,12 @@
-import React, { useState } from "react"; // ✅ Added missing import
-import image1 from "../images/Group 10.png";
-import image2 from "../images/Group 11.png";
-import image3 from "../images/Group 12.png";
-import round1 from "../images/Ellipse 58.png";
-import round2 from "../images/Ellipse 58.png";
-import round3 from "../images/Ellipse 58.png";
-import round4 from "../images/Ellipse 58.png";
-import round5 from "../images/Ellipse 58.png";
+import React, { useState } from "react";
+import image1 from "../../assets/images/Group 10.png";
+import image2 from "../../assets/images/Group 11.png";
+import image3 from "../../assets/images/Group 12.png";
+import round1 from "../../assets/images/Ellipse 58.png";
+import round2 from "../../assets/images/Ellipse 58.png";
+import round3 from "../../assets/images/Ellipse 58.png";
+import round4 from "../../assets/images/Ellipse 58.png";
+import round5 from "../../assets/images/Ellipse 58.png";
 
 export default function Dashboard() {
   const [customers] = useState([
@@ -66,7 +66,6 @@ export default function Dashboard() {
     },
   ]);
 
-  // ✅ Added missing function
   const getStatusButtonStyle = (status) => {
     return status === "active"
       ? "bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium"
@@ -103,17 +102,17 @@ export default function Dashboard() {
   ];
 
   return (
-    <div className="px-20 py-6 w-full bg-[#FAFBFF]">
+    <div className="px-4 md:px-8 lg:px-20 py-6 w-full bg-[#FAFBFF] min-h-screen lg:h-dvh overflow-y-scroll [&::-webkit-scrollbar]:hidden scrollbar">
       <div className="flex items-center">
-        <h1 className="text-xl font-semibold font-poppins">Hello Evans ,</h1>
+        <h1 className="text-xl font-semibold font-poppins">Hello User ,</h1>
         <input
           type="text"
           placeholder="search..."
-          className="border border-gray-300 rounded-md px-2 h-8 text-sm font-poppins ml-auto"
+          className="border border-gray-300 rounded-md px-2 h-8 text-sm font-poppins ml-auto w-32 md:w-auto"
         />
       </div>
 
-      <div className="rounded-xl flex justify-between w-full bg-[#FFFFFF] mt-9 p-7">
+      <div className="rounded-xl flex flex-col md:flex-row justify-between w-full bg-[#FFFFFF] mt-9 p-4 md:p-7 gap-4 md:gap-0">
         {memberInfo.map((item, index) => (
           <div className="flex items-center" key={index}>
             <div className="flex gap-x-4 items-center">
@@ -157,7 +156,7 @@ export default function Dashboard() {
             </h2>
             <p className="text-[#16C098] font-poppins">Active Members</p>
           </div>
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3">
             <input
               type="text"
               placeholder="search"
@@ -173,10 +172,7 @@ export default function Dashboard() {
 
         <div className="bg-white rounded-lg shadow-lg overflow-hidden mt-4">
           <div className=" border-b border-gray-200">
-            <div
-              className="grid gap-6 p-4 font-semibold text-gray-700 font-poppins"
-              style={{ gridTemplateColumns: "2fr 1.5fr 1.5fr 2.5fr 1fr 1fr" }}
-            >
+            <div className="grid gap-6 p-4 font-semibold text-gray-700 font-poppins grid-cols-2 md:grid-cols-4 lg:grid-cols-6">
               <div>Customer Name</div>
               <div>Company</div>
               <div>Phone Number</div>
@@ -186,7 +182,6 @@ export default function Dashboard() {
             </div>
           </div>
 
-          {/* Data Rows */}
           <div className="divide-y ">
             {customers.map((customer) => (
               <div

@@ -1,17 +1,13 @@
-import React, { useState, useContext, createContext } from "react";
+import React from "react";
+import { useAuth } from "./useAuth";
+import { Navigate } from "react-router-dom";
 
-const AuthContext = createContext();
+export default function ProtectedRoute({ children }) {
+  const { loggedIn } = useAuth();
 
-export const AuthProvider = ({ children }) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  return (
-    <AuthContext.Provider value={{ isLoggedIn, setIsLoggedIn }}>
-      {children}
-    </AuthContext.Provider>
-  );
-};
-
-export const useAuth = () => {
-  return useContext(AuthContext);
-};
+  if (loggedIn) {
+    return children;
+  } else {
+    return <Navigate to="/" />;
+  }
+}

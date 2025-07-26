@@ -1,11 +1,11 @@
-import image1 from "../images/3d-square 1.png";
-import image2 from "../images/key-square.png";
-import image3 from "../images/user-square.png";
-import image4 from "../images/wallet-money 2.png";
-import image5 from "../images/discount-shape 1.png";
-import image6 from "../images/message-question 1.png";
-import logo from "../images/setting 1.png";
-import lowImage from "../images/Ellipse 8.png";
+import image1 from "../../assets/images/3d-square 1.png";
+import image2 from "../../assets/images/key-square.png";
+import image3 from "../../assets/images/user-square.png";
+import image4 from "../../assets/images/wallet-money 2.png";
+import image5 from "../../assets/images/discount-shape 1.png";
+import image6 from "../../assets/images/message-question 1.png";
+import logo from "../../assets/images/setting 1.png";
+import lowImage from "../../assets/images/Ellipse 8.png";
 
 export default function Navbar() {
   const sideBarItems = [
@@ -37,7 +37,7 @@ export default function Navbar() {
     },
   ];
   return (
-    <div className="w-64 bg-[#FFFFFF] pt-7 px-4 h-screen flex flex-col justify-between box-border sticky top-0">
+    <div className="w-full lg:w-64 bg-[#FFFFFF] pt-7 px-4 h-auto lg:h-dvh flex flex-col justify-between box-border lg:sticky lg:top-0">
       <div className="flex flex-col">
         <div className="flex items-center pl-3">
           <img src={logo} alt="logo" />
@@ -58,14 +58,14 @@ export default function Navbar() {
           ))}
         </nav>
       </div>
-      <div className="font-poppins font-semibold text-white text-center p-2">
-        <div className="bg-gradient-to-r from-[#EAABF0] to-[#4623E9] p-4 rounded-lg">
+      <div className="font-poppins font-semibold text-white text-center text-sm p-2 flex flex-col gap-3 items-start justify-center">
+        <div className="bg-gradient-to-r from-[#EAABF0] to-[#4623E9] px-2 py-2 rounded-lg gap-4 hidden lg:block">
           <p>upgrade to PRO to get access to all features</p>
-          <button className="py-1 px-5 mt-6 bg-white text-[#4925E9] rounded-2xl">
+          <button className="py-1 px-3 bg-white text-[#4925E9] rounded-2xl">
             Get Pro Now
           </button>
         </div>
-        <div className="flex items-center rounded-lg p-3 mt-4">
+        <div className="flex items-center rounded-lg p-3 ">
           <div className="w-10 h-10 rounded-full overflow-hidden mr-3">
             <img
               src={lowImage}
@@ -77,7 +77,6 @@ export default function Navbar() {
             <p className="text-[#757575] font-poppins">Username</p>
             <p className="text-xs text-black font-poppins">Free Account</p>
           </div>
-          {/* <span className="ml-auto text-[#9197B3] font-poppins">{">"}</span> */}
         </div>
       </div>
     </div>
